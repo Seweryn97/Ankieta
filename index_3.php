@@ -1,16 +1,3 @@
-<?php session_start();
-
-    $_SESSION['plec'] = $_POST['plec'];
-    $_SESSION['wiek']=$_POST['wiek'];
-    $_SESSION['tryb_pracy']=$_POST['tryb_pracy'];
-    $_SESSION['stres']=$_POST['stres'];
-    $_SESSION['zawal']=$_POST['zawal'];
-    $_SESSION['alkohol']=$_POST['alkohol'];
-    $_SESSION['papierosy']=$_POST['papierosy'];
-    $_SESSION['narkotyki']=$_POST['narkotyki'];
-    
-    header("Location:survey.php");
-?>
 <!DOCTYPE>
 <html lang="pl">
 <head>
@@ -19,22 +6,36 @@
     <title>Ankieta</title>
 </head>
 <body class="body">
-<div class="header"><h1>Ankieta dotycz�ca zawa�u serca</h1></div>
+<div class="header"><h1>Ankieta dotycząca chrór związanych z sercem</h1></div>
 <div id="contener">
     <div class="cont1">
-        <form action="index_4.php" method="post">
-            <h1>Jak często pijesz alkohol</h1>
-                <input type="radio"  name="ilosc_a" value="codziennie">codziennie<br>
-                <input type="radio"  name="ilosc_a" value="raz_na_tydzie�">raz na tydzie�<br>
-                <input type="radio"  name="ilosc_a" value="raz_na_miesi�c">raz na miesi�c<br>
-                <input type="radio"  name="ilosc_a" value="raz_na_rok">raz na rok<br>
-            <h1>Jak często palisz papierosy</h1>
-                <input type="radio"  name="ilosc_p" value="więcej niż 2 paczki ">codziennie<br>
-                <input type="radio"  name="ilosc_p" value="mniej niż 2 paczki">raz na tydzie�<br>
-                <input type="radio"  name="ilosc_p" value="okazyjnie">raz na miesi�c<br>
+        <form action="index_2.php" method="post">
+            <divh1 class="contener">Ile czasu minęło od zawału:</divh1>
+            <input type="radio" id="radio5" name="czas" value="<pol roku"/>
+            <label for="radio5">mniej niż pół roku</label>
+            <input type="radio" id="radio6" name="czas" value=">pol roku"/>
+            <label for="radio6">więcej niż pół roku</label>
+            <input type="radio" id="radio7" name="czas" value=">rok"/>
+            <label for="radio6">więcej niż rok</label>
+            </br>
+            <divh1 class="contener">Czy po wyjściu ze szpitala kontynuowałeś/aś rehabilitację:</divh1>
+            <input type="radio" id = "radio1" name="rehabilitacja" value="tak"/>
+            <label for="radio1">Tak</label>
+            <input type="radio" id = "radio2" name="rehabilitacja" value="nie"/>
+            <label for="radio2">Nie</label>
+            </br>
+            <divh1 class="contener">Czy po zawale zwiększyłeś/aś aktywność fizyczną:</divh1>
+            <input type="radio" id="radio3"  name="aktywność" value="tak"/>
+            <label for="radio3">Tak</label>
+            <input type="radio" id="radio4" name="aktywność" value="nie"/>
+            <label for="radio4">Nie</label>
+            </br>
+            <button class="btn-slide-line">
+                <span>Dalej</span>
+            </button>
+        </form>
     </div>
 </div>
-</form>
 </div>
 </body>
 </html>

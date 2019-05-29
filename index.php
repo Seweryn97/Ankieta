@@ -14,7 +14,7 @@
             <divh1 class="contener">Podaj płeć:</divh1>
                 <input type="radio" id="radio1" name="plec" value="kobieta"/>
                 <label for="radio1">Kobieta</label>
-                <input type="radio" id="radio2" name="plec" value="mężczyzna"/>
+                <input type="radio" id="radio2" name="plec" value="mezczyzna"/>
                 <label for="radio2">Mezczyzna</label>
                 <br/>
             <divh1>Podaj swój wiek:</divh1>
@@ -24,7 +24,7 @@
             <divh1 class="contener">Tryb pracy:</divh1>
                 <input type="radio" id="radio7"  name="tryb_pracy" value="aktywny"/>
                 <label for="radio7">aktywny</label>
-                <input type="radio" id="radio8"   name="tryb_pracy" value="siedzący"/>
+                <input type="radio" id="radio8"   name="tryb_pracy" value="siedzacy"/>
                 <label for="radio8">siedzący</label>
                 <input type="radio" id="radio9"  name="tryb_pracy" value="bezrobotny/emeryt"/>
                 <label for="radio9">bezrobotny/emeryt</label>
@@ -49,6 +49,12 @@
                 <input type="radio" id="radio17" name="zawal" value="nie"/>
                 <label for="radio17">nie</label>
                 </br>
+            <divh1 class="contener">Czy miałeś zawał serca</divh1>
+                <input type="radio" id="radio18"  name="zawal_m" value="tak"/>
+                <label for="radio18">tak</label>
+                <input type="radio" id="radio19" name="zawal_m" value="nie"/>
+                <label for="radio19">nie</label>
+            </br>
             <button class="btn-slide-line">
                 <span>Dalej</span>
             </button>
@@ -58,15 +64,5 @@
 </div>
 </body>
 </html>
-<?php
-//if(isset($_POST['save']) && $_POST['save']=="True"){
 
-if(isset($_POST['plec']) && $_POST['plec'] && $_POST['tryb_pracy'] && $_POST['stres']&&$_POST['zawal'])
-{
-    echo "Wypełnij wszystkie pola";
-
-}
-//}
-
-?>
 

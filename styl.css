@@ -1,11 +1,294 @@
+
 .header{
     text-align: center;
-    color: red;
+    color: #4240ff;
+    font-style: normal;
+    font-family: "Apple Chancery", cursive;
 }
 #contener{
      height: 300px;
      width: 500px;
      margin: 0 auto;
      margin-top: 50px;
+     font-style: normal;
+     font-weight: bold;
+     font-family: "Apple Chancery", cursive;
 
  }
+
+.body {
+    background-image: url("background.jpg");
+}
+
+/**
+ * Basic stuff - not really radio style related
+ */
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700);
+html {
+    box-sizing: border-box;
+    font-size: 95%;
+    line-height: 1.5;
+    font-family: "Open Sans", sans-serif;
+    color: #333;
+    text-align: center;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+.box {
+    width: 100%;
+    max-width: 400px;
+    margin: 2rem auto;
+    background: white;
+    border: 1px solid white;
+    border-radius: 3px;
+    text-align: left;
+}
+
+h1 {
+    color: #5f76ff;
+    margin: 10% 0 0 0;
+}
+
+p {
+    color: #fff;
+    font-size: 0.9rem;
+    opacity: 0.6;
+}
+
+/*****
+ *
+ * Radio checked style related
+ * the fun part starts here
+ *
+ */
+input[type="radio"] {
+    display: none;
+}
+
+/**
+ * How it should look when hovered
+ */
+.active-label, label:focus, label:hover, label:active, input:checked + label {
+    color: #e0758e;
+}
+.active-label:before, label:focus:before, label:hover:before, label:active:before, input:checked + label:before {
+    background: white;
+    border-color: #e0758e;
+}
+
+/**
+ * Make those labels sexy
+ */
+label {
+    font-size: 1rem;
+    font-weight: bold;
+    line-height: 1;
+    cursor: pointer;
+    display: block;
+    padding: 1rem 1rem 1rem 3rem;
+    position: relative;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    background: white;
+    whitespace: no-wrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    transition: all 0.15s ease;
+    /**
+     * This is the radio fake dot basically
+     */
+}
+label:first-of-type {
+    border: 0;
+}
+label:before {
+    content: "";
+    position: absolute;
+    left: 1rem;
+    top: 1rem;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    border: 0.2rem solid #ccc;
+}
+
+/**
+ * How it should look when checked
+ */
+input:checked + label:before {
+    border-color: white;
+    border: none;
+    background: #e0758e;
+}
+
+/**
+ * How it should look when disabled
+ */
+input:disabled + label {
+    background: #efefef;
+    color: rgba(0, 0, 0, 0.5);
+    cursor: not-allowed;
+}
+input:disabled + label:hover {
+    border-color: rgba(0, 0, 0, 0.1);
+}
+input:disabled + label:before {
+    border-color: white;
+    background: white;
+}
+
+
+button {
+    position: relative;
+    margin: 0;
+    padding: 5px 12px;
+    height: 60px;
+    width: 150px;
+    outline: none;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    text-transform: uppercase;
+    background-color: #ffffff;
+    border: 1px solid rgba(22, 76, 167, 0.6);
+    border-radius: 10px;
+    color: #1d89ff;
+    font-weight: 400;
+    font-size: 20px;
+    font-family: inherit;
+    z-index: 0;
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.02, 0.01, 0.47, 1);
+}
+button span {
+    color: #164ca7;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.7px;
+}
+button:hover {
+    animation: rotate 0.7s ease-in-out both;
+}
+button:hover span {
+    animation: storm 0.7s ease-in-out both;
+    animation-delay: 0.06s;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg) translate3d(0, 0, 0);
+    }
+    25% {
+        transform: rotate(3deg) translate3d(0, 0, 0);
+    }
+    50% {
+        transform: rotate(-3deg) translate3d(0, 0, 0);
+    }
+    75% {
+        transform: rotate(1deg) translate3d(0, 0, 0);
+    }
+    100% {
+        transform: rotate(0deg) translate3d(0, 0, 0);
+    }
+}
+@keyframes storm {
+    0% {
+        transform: translate3d(0, 0, 0) translateZ(0);
+    }
+    25% {
+        transform: translate3d(4px, 0, 0) translateZ(0);
+    }
+    50% {
+        transform: translate3d(-3px, 0, 0) translateZ(0);
+    }
+    75% {
+        transform: translate3d(2px, 0, 0) translateZ(0);
+    }
+    100% {
+        transform: translate3d(0, 0, 0) translateZ(0);
+    }
+}
+.btn-pill:before, .btn-pill:after {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: #1d89ff;
+    content: '';
+    opacity: 0;
+    transition: transform 0.15s cubic-bezier(0.02, 0.01, 0.47, 1), opacity 0.15s cubic-bezier(0.02, 0.01, 0.47, 1);
+    z-index: -1;
+    transform: translate(100%, -25%) translate3d(0, 0, 0);
+}
+.btn-pill:hover:before, .btn-pill:hover:after {
+    opacity: 0.15;
+    transition: transform 0.2s cubic-bezier(0.02, 0.01, 0.47, 1), opacity 0.2s cubic-bezier(0.02, 0.01, 0.47, 1);
+}
+.btn-pill:hover:before {
+    transform: translate3d(50%, 0, 0) scale(0.9);
+}
+.btn-pill:hover:after {
+    transform: translate(50%, 0) scale(1.1);
+}
+
+.btn-shine {
+    border: 1px solid;
+    overflow: hidden;
+    position: relative;
+}
+.btn-shine span {
+    z-index: 20;
+}
+.btn-shine:after {
+    background: #38ef7d;
+    content: "";
+    height: 155px;
+    left: -75px;
+    opacity: .4;
+    position: absolute;
+    top: -50px;
+    transform: rotate(35deg);
+    transition: all 550ms cubic-bezier(0.19, 1, 0.22, 1);
+    width: 50px;
+    z-index: -10;
+}
+.btn-shine:hover:after {
+    left: 120%;
+    transition: all 550ms cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.btn-slide-line.center:after {
+    left: 50%;
+}
+.btn-slide-line:after {
+    position: absolute;
+    right: 0;
+    left: auto;
+    transition: .3s;
+    content: '';
+    width: 0;
+    bottom: 0;
+    height: 3px;
+    background: #164ca7;
+}
+.btn-slide-line:hover {
+    cursor: pointer;
+}
+.btn-slide-line:hover:after {
+    width: 100%;
+    left: 0;
+}
+
+.inspire a {
+    text-decoration: none;
+}
+/** ajax */
+
