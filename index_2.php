@@ -1,64 +1,15 @@
 <?php
 session_start();
 
-foreach ($_POST as $key => $value)
-{
-    $_SESSION[$key] = $value;
-}
+    foreach ($_POST as $key => $value)          //Zapełnienie tablicy session warościami z tablicy post
+    {
+        $_SESSION[$key] = $value;
+    }
 
-
-/*$_SESSION['plec'] = !empty($_POST['plec']) ? $_POST['plec']  : $_SESSION['plec'];
-        if(!empty($_POST['plec'])){
-            //$_SESSION['plec']="brak";
-            $_SESSION['plec']=$_POST['plec'];
-            }
-        //else $_SESSION['plec']=$_POST['plec'];
-
-        if(!empty($_POST['wiek'])){
-            //$_SESSION['wiek']="brak";
-            $_SESSION['wiek']=$_POST['wiek'] ;
-            }
-
-        if(!empty($_POST['tryb_pracy'])){
-            $_SESSION['tryb_pracy']="brak";
-        }
-        else $_SESSION['tryb_pracy']=$_POST['tryb_pracy'];
-
-        if(empty($_POST['stres'])){
-            $_SESSION['stres']="brak";
-            }
-        else $_SESSION['stres']=$_POST['stres'];
-
-        if(empty($_POST['zawal'])){
-            $_SESSION['zawal']="brak";
-            }
-        else $_SESSION['zawal']=$_POST['zawal'];
-
-        if(empty($_POST['zawal_m'])){
-            $_SESSION['zawal_m']="brak";
-        }
-        else $_SESSION ['zawal_m']=$_POST['zawal_m'];
-
-        if(empty($_POST['czas'])){
-            $_SESSION['czas']="brak";
-            }
-        else $_SESSION ['czas']=$_POST['czas'];
-
-        if(empty($_POST['rehabilitacja'])){
-            $_SESSION['rehabilitacja']="brak";
-            }
-        else $_SESSION ['rehabilitacja']=$_POST['rehabilitacja'];
-
-        if(empty($_POST['aktywność'])){
-            $_SESSION['aktywność']="brak";
-            }
-        else $_SESSION ['aktywność']=$_POST['aktywność'];*/
-
-        if($_SESSION['zawal_m']=="tak" && $_SESSION['index3visited'] != true) {
+    if($_SESSION['zawal_m']=="tak" && $_SESSION['index3visited'] != true) {           //przekierowanie do strony z pytaniami o zawał zw zależności od odpowiedzi
             $_SESSION['index3visited'] = true;
             header("Location:index_3.php");
         }
-        //if(empty($_SESSION['cza']))
 
 ?>
 <!DOCTYPE>

@@ -1,10 +1,10 @@
 <?php session_start();
 
-$_SESSION['alkohol']=$_POST['alkohol'];
+$_SESSION['alkohol']=$_POST['alkohol'];                 //Przesłanie odpowiedzi ze strony index_2.php
 $_SESSION['papierosy']=$_POST['papierosy'];
 $_SESSION['narkotyki']=$_POST['narkotyki'];
 
-if($_SESSION['alkohol']=='tak' && $_SESSION['papierosy']=='tak' && $_SESSION['narkotyki']=='tak' ) {
+if($_SESSION['alkohol']=='tak' && $_SESSION['papierosy']=='tak' && $_SESSION['narkotyki']=='tak' ) {   //Wyświetlenie odpowiedniego html jeśli na wszystkie pytania w index_2.php byla odp "tak"
     echo "<!DOCTYPE>
 <html lang='pl'>
 <head>
@@ -54,7 +54,7 @@ if($_SESSION['alkohol']=='tak' && $_SESSION['papierosy']=='tak' && $_SESSION['na
 </html>";
 }
 
-else if($_SESSION['alkohol']=='nie' && $_SESSION['papierosy']=='nie' && $_SESSION['narkotyki']=='tak' )
+else if($_SESSION['alkohol']=='nie' && $_SESSION['papierosy']=='nie' && $_SESSION['narkotyki']=='tak' )  //Jeśli w index_2.php nie nie tak
 {
    echo "<!DOCTYPE>
 <html lang='pl'>
@@ -87,7 +87,7 @@ else if($_SESSION['alkohol']=='nie' && $_SESSION['papierosy']=='nie' && $_SESSIO
 </html>";
 }
 
-else if($_SESSION['alkohol']=='nie' && $_SESSION['papierosy']=='tak' && $_SESSION['narkotyki']=='nie' ){
+else if($_SESSION['alkohol']=='nie' && $_SESSION['papierosy']=='tak' && $_SESSION['narkotyki']=='nie' ){ //Jeśli w index_2.php nie tak nie
     echo "<!DOCTYPE>
 <html lang='pl'>
 <head>
@@ -119,7 +119,7 @@ else if($_SESSION['alkohol']=='nie' && $_SESSION['papierosy']=='tak' && $_SESSIO
 </html>";
 }
 
-else if($_SESSION['alkohol']=='tak' && $_SESSION['papierosy']=='nie' && $_SESSION['narkotyki']=='tak' ){
+else if($_SESSION['alkohol']=='tak' && $_SESSION['papierosy']=='nie' && $_SESSION['narkotyki']=='tak' ){  //Jeśli w index_2.php tak nie tak
     echo"<!DOCTYPE>
 <html lang=\"pl\">
 <head>
@@ -161,7 +161,7 @@ else if($_SESSION['alkohol']=='tak' && $_SESSION['papierosy']=='nie' && $_SESSIO
 </html>";
 }
 
-else if($_SESSION['alkohol']=='tak' && $_SESSION['papierosy']=='tak' && $_SESSION['narkotyki']=='nie' ) {
+else if($_SESSION['alkohol']=='tak' && $_SESSION['papierosy']=='tak' && $_SESSION['narkotyki']=='nie' ) {    //Jeśli w index_2.php tak tak nie
     echo"<!DOCTYPE>
 <html lang=\"pl\">
 <head>
@@ -204,7 +204,7 @@ else if($_SESSION['alkohol']=='tak' && $_SESSION['papierosy']=='tak' && $_SESSIO
 
 }
 
-else if($_SESSION['alkohol']=='tak' && $_SESSION['papierosy']=='nie' && $_SESSION['narkotyki']=='nie' ) {
+else if($_SESSION['alkohol']=='tak' && $_SESSION['papierosy']=='nie' && $_SESSION['narkotyki']=='nie' ) {    //Jeśli w index_2.php tak nie nie
     echo "<!DOCTYPE>
 <html lang=\"pl\">
 <head>
@@ -239,7 +239,7 @@ else if($_SESSION['alkohol']=='tak' && $_SESSION['papierosy']=='nie' && $_SESSIO
 </html>";
 
 }
-else if($_SESSION['alkohol']=='nie' && $_SESSION['papierosy']=='tak' && $_SESSION['narkotyki']=='tak' ) {
+else if($_SESSION['alkohol']=='nie' && $_SESSION['papierosy']=='tak' && $_SESSION['narkotyki']=='tak' ) {   //Jeśli w index_2.php nie tak tak
     echo"<!DOCTYPE>
 <html lang=\"pl\">
 <head>
@@ -278,6 +278,6 @@ else if($_SESSION['alkohol']=='nie' && $_SESSION['papierosy']=='tak' && $_SESSIO
 </html>";
 }
 else {
-    header("Location: survey.php");
+    header("Location: survey.php");    //Jeśli w index_2.php nie nie nie
 }
 ?>
